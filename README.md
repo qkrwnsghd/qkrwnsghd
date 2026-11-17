@@ -1,16 +1,60 @@
-## Hi there 👋
+박준홍 · Junhong Park
+금융 데이터를 직접 수집하고 계산하는 경영학도입니다.
 
-<!--
-**qkrwnsghd/qkrwnsghd** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+한림대학교 경영학과 3학년에 재학 중입니다. 주식·적금·채권을 직접 운용하며 생긴 궁금증을 그대로 두지 않고, 데이터를 모아 계산하는 서비스로 만들어 왔습니다. 레버리지 ETF 계산기 포트핏을 기획부터 데이터 수집, 화면, 서버, 배포까지 혼자 개발해 운영하고 있습니다.
 
-Here are some ideas to get you started:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+관심 분야
+금융: 예적금·채권·ETF 등 금융상품 구조, 투자자 행동, 리스크 관리
+백엔드: 데이터 수집 자동화, 데이터베이스 설계와 접근 권한 관리, 서버 함수(API) 개발
+
+기술 스택
+Language 
+ 
+ 
+ 
+
+Backend · Data 
+ 
+ 
+ 
+
+Frontend · DevOps 
+ 
+ 
+ 
+ 
+
+
+대표 프로젝트
+📈 포트핏 (PortFit) · 서비스 바로가기
+레버리지 ETF, 1배보다 얼마나 더 벌고 잃었을까?
+
+보유한 레버리지 ETF와 ETF 포트폴리오의 현재 상태를 숫자로 진단하는 웹 서비스입니다. 종목을 추천하지 않고, 사용자가 이미 가진 자산만 계산합니다.
+
+구분	내용
+기간 · 인원	2026 · 1인 개발 (기획, 데이터, 화면, 서버, 배포)
+핵심 기능	레버리지 효과·변동성 손실(음의 복리)·환차손익 계산 / ETF 구성종목 단위 쏠림·중복률 진단 / 거래내역 기반 매매 습관 진단(처분효과, 손익비) / 익절·손절 규칙 웹 푸시 알림
+데이터	레버리지·인버스 ETF 50종, 구성종목 분석 ETF 28종을 매일 자동 수집
+기술	Python(pykrx, yfinance), GitHub Actions, Supabase(PostgreSQL, 인증, Edge Functions, pg_cron), JavaScript, PWA
+주요 구현 내용
+
+한국거래소·해외 시세·환율 데이터를 GitHub Actions로 매일 수집하고, 단계별 실패가 전체 서비스에 번지지 않도록 수집 파이프라인을 분리
+거래소가 비중을 제공하지 않는 미국 ETF는 보유 주식 수 × 현재 주가로 비중을 직접 계산하고, 주가 확인률 90% 이상일 때만 반영
+24시간 거래되는 코인과 미국 장 시간의 ETF, 휴장일이 다른 한·미 시장의 시세를 같은 시점 기준으로 맞춰 저장
+행 단위 보안(RLS)으로 사용자별 데이터 접근을 제한하고, 외부 API 키는 서버 Secrets에만 보관
+2분 간격 예약 작업(pg_cron)으로 사용자 규칙을 확인해 조건 충족 시 웹 푸시 발송
+
+GitHub 활동
+ 
+
+
+활동
+강원지역문제해결 동아리 · 팀장 (2026.05 ~ 2026.08) 지역 문제 해결 앱 「라스트마일 네비게이터」 개발 프로젝트에서 팀장을 맡아 역할 분담, 일정 관리, 개발 진행 상황 점검을 담당
+
+공부하고 있는 것
+신용분석사 자격증 취득을 목표로 공부 중
+백엔드 기초: 데이터베이스 설계, REST API
+
+연락처
+📧 human30709@naver.com
